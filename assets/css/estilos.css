@@ -23,6 +23,7 @@ body {
     "header"
     "nav"
     "main"
+    "paginas"
     "footer";
     }     
 
@@ -61,10 +62,16 @@ menu{
     grid-area: menu;
     display: flex;
     flex-direction: column;
-    background-color: var(--old-silver);
-    padding: 1rem 0 0 3rem;
+    background-color: var(--azul-marino);
+    color: var(--white);
+    padding: 10px;
     display:none;
     }
+menu p {
+        text-align: center;
+    }
+
+
 main{
     grid-area: main;
     background-color: var(--white);
@@ -76,14 +83,14 @@ main{
     text-align: center; 
     width: 100%; 
     padding: 20px; 
-    font-size: 24px; 
+    font-size: 15px; 
     font-weight: bold;
     display: flex;
     justify-content:space-between;
 }
 
 .navbar i {
-    padding: 0 10px;
+    padding: 0 10px 0 0;
 }
 
 
@@ -117,14 +124,15 @@ p {
     flex-direction: column;
     background-color: var(--white);
     justify-content: center;
+    align-items: center;
     border-radius: 3px; 
     overflow: hidden; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;
 }
 .item img {
-    width: 100%;
-    height: 200px;
+    width: 200px;
+    height: 120px;
     object-fit: cover;
 
 }
@@ -146,19 +154,21 @@ p {
 .botton {
     
     background-color: var(--azul-marino);
-    padding: 1rem;
-    width: 30%;
+    padding: 10px;
+    width: 40%;
     justify-content:center;
     border-radius: 5px;
 }
 .boton {
     color: var(--white);
+    font-size: 10px;
 }
 
 .paginas {
+    grid-area: paginas;
     display: flex;
     list-style: none;
-    padding: 0;
+    padding: 10px;
     justify-content:center;
 }
 
@@ -183,13 +193,48 @@ p {
 }
 
 footer{
+    display: flex;
+    flex-direction: column;
     grid-area: footer;
     background-color: var(--azul-marino);
     color: var(--white); 
     text-align: center; 
+    justify-content:end;
     width: 100%; 
     padding: 20px 0; 
     font-size: 15px;
-    padding-bottom: 50px; 
+    padding-bottom: 20px; 
     
     }
+
+    @media (min-width: 576px) {
+
+        .grid-container {
+          display: grid;
+          grid-template-columns: 1fr 4fr;
+          grid-template-areas: 
+            'header nav'
+            'menu main'
+            'menu main'
+            'footer main'
+            'footer paginas'
+          ;
+        }
+
+        .navbar {
+            justify-content:center;
+        }
+        
+        
+        menu{
+            display: block;
+          }
+
+        .rayitas{
+            display: none;
+          }  
+
+        .container {
+            grid-template-columns: repeat(4,1fr);
+          }
+        }
