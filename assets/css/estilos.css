@@ -117,6 +117,10 @@ p {
     flex-direction: column;
     background-color: var(--white);
     justify-content: center;
+    border-radius: 3px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
 }
 .item img {
     width: 100%;
